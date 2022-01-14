@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('SearchVatID/{vatId}',[ApiSearchController::class, 'searchBusnessId']);
-Route::get('SearchByName/{name}',[ApiSearchController::class,'SearchByName']);
-Route::get('SearchByDates/{from}/{to}',[ApiSearchController::class,'SearchTimeFrame']);
+//Route::get('SearchVatID/{vatId}',[ApiSearchController::class, 'searchBusnessId']);
+//Route::get('SearchByName/{name}',[ApiSearchController::class,'SearchByName']);
+//Route::get('SearchByDates/{from}/{to}',[ApiSearchController::class,'SearchTimeFrame']);
