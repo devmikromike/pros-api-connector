@@ -11,4 +11,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('SearchVatID/{vatId}',[ApiSearchController::class, 'SearchBusnessId']);
 Route::get('SearchByName/{name}',[ApiSearchController::class,'SearchByName']);
 Route::get('SearchByDates/{from}/{to}',[ApiSearchController::class,'SearchTimeFrame']);
-Route::get('SearchPostalCode/{code}',[ApiSearchController::class, 'SearchPostalCode']);
+Route::get('SearchByPostalCode/{code}',[ApiSearchController::class, 'SearchPostalCode']);
