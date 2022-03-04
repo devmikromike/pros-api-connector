@@ -21,7 +21,7 @@ class ApiSearchController extends Controller
    }
    public function SearchPostalCode($code)
    {  //  'totalResults=true&maxResults=1000&resultsFrom=0&streetAddressPostCode=01300&companyForm=OY'
-      dump($code);
+      // dump($code);
      $baseUrl =  Search::baseUrl();
      $url =  $baseUrl;
      $headers =  Search::defaultHeader();
@@ -33,7 +33,7 @@ class ApiSearchController extends Controller
        'companyForm' =>'OY'
      );
      $search = Search::createHttpGet($headers,$url,$query);
-     dump($search);
+     // dump($search);
      return $search;
   }
    public function SearchByName($name)
