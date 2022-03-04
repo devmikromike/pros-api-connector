@@ -55,7 +55,7 @@ class Search extends Model
     }
     public function statuscode($status)
     {
-      dump($status);
+      // dump($status);
       if($status === 504)
       {
           $statusMessage = 'PRH taustajärjestelmä ei vastaa';
