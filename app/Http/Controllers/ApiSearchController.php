@@ -8,7 +8,9 @@ use App\Models\Search;
 
 class ApiSearchController extends Controller
 {
-    public function searchBusnessId($vatId)
+  /*"totalResults": 138640,  companyRegistrationFrom 2014-02-28  */
+
+    public function SearchBusnessId($vatId)
     {
       $baseUrl =  Search::baseUrl();
       $url =  $baseUrl .$vatId;
@@ -17,6 +19,23 @@ class ApiSearchController extends Controller
       $search = Search::createHttpGet($headers,$url,$query);
       return $search;
    }
+   public function SearchPostalCode($code)
+   {  //  'totalResults=true&maxResults=1000&resultsFrom=0&streetAddressPostCode=01300&companyForm=OY'
+      dump($code);
+     $baseUrl =  Search::baseUrl();
+     $url =  $baseUrl;
+     $headers =  Search::defaultHeader();
+     $query = array(
+       'totalResults' => true,
+       'maxResults' => 1000,
+       'resultsFrom' => 0,
+       'streetAddressPostCode' => $code,
+       'companyForm' =>'OY'
+     );
+     $search = Search::createHttpGet($headers,$url,$query);
+     dump($search);
+     return $search;
+  }
    public function SearchByName($name)
    {
      $baseUrl =  Search::baseUrl();

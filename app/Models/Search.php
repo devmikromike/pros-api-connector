@@ -21,7 +21,7 @@ class Search extends Model
     public function  defaultHeader()
     {
       return $headers = array(
-            'User-Agent' => 'PHP-testing/1.0',
+            'User-Agent' => 'PHP-testing/1.2.3',
             'Accept'     => 'application/json',
         );
     }
@@ -55,6 +55,7 @@ class Search extends Model
     }
     public function statuscode($status)
     {
+      dump($status);
       if($status === 504)
       {
           $statusMessage = 'PRH taustajärjestelmä ei vastaa';
